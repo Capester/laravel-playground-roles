@@ -44,6 +44,8 @@ class AuthController extends Controller
     {
         Auth::logout();
         
+        // dit is een trest van Chris
+        
         return redirect()->route('main');
     }
 }
