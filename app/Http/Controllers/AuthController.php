@@ -29,7 +29,7 @@ class AuthController extends Controller
         $user->email = $request['email'];
 
         $user->password = $request['password'];
-        
+          //dd
         $user->save();
         $user->roles()->attach(Role::where('name', 'User')->first());
         Auth::login($user);
@@ -52,4 +52,4 @@ class AuthController extends Controller
         
         return redirect()->route('main');
     }
-}
+} 
