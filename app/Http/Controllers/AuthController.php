@@ -23,9 +23,13 @@ class AuthController extends Controller
     {
         $user = new User();
         $user->first_name = $request['first_name'];
+
         $user->last_name = $request['last_name'];
+
         $user->email = $request['email'];
+
         $user->password = $request['password'];
+        
         $user->save();
         $user->roles()->attach(Role::where('name', 'User')->first());
         Auth::login($user);
@@ -43,6 +47,8 @@ class AuthController extends Controller
     public function getLogout()
     {
         Auth::logout();
+        
+        // dit is een trest van Chris
         
         return redirect()->route('main');
     }
