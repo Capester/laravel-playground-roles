@@ -47,13 +47,9 @@ class AuthController extends Controller
     public function getLogout()
     {
         Auth::logout();
-<<<<<<< HEAD
         
         // dit is een trest van Chris
         
-=======
-
->>>>>>> origin/master
         return redirect()->route('main');
     }
 }
